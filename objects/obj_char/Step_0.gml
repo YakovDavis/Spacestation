@@ -86,20 +86,26 @@ if (place_meeting(x + hspeed, y + vspeed, obj_floor)) {
 
 facing = sign(hspeed);
 
+
+gun_direction_actual = sign(mouse_x - x) * arccos((y - mouse_y)/sqrt((mouse_y - y)*(mouse_y - y) + (mouse_x - x)*(mouse_x - x)));
+gun_direction_animated = round(gun_direction_actual / pi * 4);
+
 if (x > 1280)
 {
 	with(all)
 	{
-		x -= 320;
+		x -= 640;
 	}
+	clean_up_teleport();
 }
 
 if (x < 640)
 {
 	with(all)
 	{
-		x += 320;
+		x += 640;
 	}
+	clean_up_teleport();
 }
 
 // Speed debug

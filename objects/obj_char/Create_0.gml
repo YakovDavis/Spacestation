@@ -15,7 +15,11 @@ gravity_rate = 0.2;
 run_frame = 0.0;
 facing = 1;
 run_animation_speed = 0.5;
-idle_animation_margin = 0.2
+idle_animation_margin = 0.2;
+gun_direction_actual = 0;
+gun_direction_animated = 0;
+bullet_spawn_radius = 0.5;
+bullet_speed = 5;
 
 // Controls
 control_left = ord("A");
