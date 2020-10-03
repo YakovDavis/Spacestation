@@ -1,6 +1,8 @@
 {
   "resources": [
-    {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},"order":0,},
+    {"id":{"name":"spr_char_running","path":"sprites/spr_char_running/spr_char_running.yy",},"order":1,},
+    {"id":{"name":"spr_platform","path":"sprites/spr_platform/spr_platform.yy",},"order":0,},
+    {"id":{"name":"spr_char_idle","path":"sprites/spr_char_idle/spr_char_idle.yy",},"order":2,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
