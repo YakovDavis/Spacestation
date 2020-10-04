@@ -1,4 +1,6 @@
-global.zone = 0;
+global.current_zone = 0;
+global.left_zone = 7;
+global.right_zone = 1;
 global.wave = 0;
 
 instance_create_depth(0, 0, -100, obj_cursor_control);

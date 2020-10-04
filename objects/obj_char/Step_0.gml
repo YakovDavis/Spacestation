@@ -38,11 +38,13 @@ if !place_meeting(x, y + 1, obj_floor)
 if place_meeting(x, y + 1, obj_floor)
 {
    hspeed += move_input_total * accel_rate_ground;
+   jumping = false;
 }
 // In air
 if !place_meeting(x, y + 1, obj_floor)
 {
    hspeed += move_input_total * accel_rate_air;
+   jumping = true;
 }
 // Limit speed to move_rate
 hspeed = clamp(hspeed, -move_rate, move_rate);
@@ -97,6 +99,9 @@ if (x > 1280)
 		x -= 640;
 	}
 	clean_up_teleport();
+	gone_right();
+	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
+	
 }
 
 if (x < 640)
@@ -106,6 +111,8 @@ if (x < 640)
 		x += 640;
 	}
 	clean_up_teleport();
+	gone_left();
+	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
 }
 
 // Speed debug
