@@ -96,7 +96,10 @@ if (x > 1280)
 {
 	with(all)
 	{
-		x -= 640;
+		if (object_get_name(object_index) == "obj_bullet")
+			real_x -= 640;
+		else
+			x -= 640;
 	}
 	clean_up_teleport();
 	gone_right();
@@ -108,7 +111,10 @@ if (x < 640)
 {
 	with(all)
 	{
-		x += 640;
+		if (object_get_name(object_index) == "obj_bullet")
+			real_x += 640;
+		else
+			x += 640;
 	}
 	clean_up_teleport();
 	gone_left();
