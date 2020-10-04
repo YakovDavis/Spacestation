@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bd31032e-ee12-4ece-b822-7769063ec4aa","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Man",
-    "path": "folders/Sprites/Man.yy",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_char_jumping",
