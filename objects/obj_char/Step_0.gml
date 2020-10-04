@@ -22,7 +22,7 @@ if jump_buffer_count < jump_buffer
 
 // No move input, brake
 // On ground
-if (place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))
+if (place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small)||place_meeting(x, y + 1, obj_invisible_wall))
 {
    if move_input_total == 0 || (hspeed * move_input_total < 0)
    {
@@ -30,7 +30,7 @@ if (place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_sma
    }
 }
 // In air
-if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))
+if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small)||place_meeting(x, y + 1, obj_invisible_wall))
 {
    if move_input_total == 0 || (hspeed * move_input_total < 0)
    {
@@ -40,7 +40,7 @@ if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_sm
 
 // Move player and clamp value to max
 // On ground
-if place_meeting(x, y + 1, obj_floor)
+if place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_invisible_wall)
 {
    hspeed += move_input_total * accel_rate_ground;
    jumping = false;
@@ -55,7 +55,7 @@ if (pl != noone) {
 }
 	   
 // In air
-if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))
+if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small)||place_meeting(x, y + 1, obj_invisible_wall))
 {
    hspeed += move_input_total * accel_rate_air;
    jumping = true;
@@ -64,7 +64,7 @@ if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_sm
 hspeed = clamp(hspeed, -move_rate, move_rate);
 
 // Gravity
-if (vspeed < gravity_vspeed) && !place_meeting(x, y + 1, obj_floor)
+if (vspeed < gravity_vspeed) && !place_meeting(x, y + 1, obj_floor) && !place_meeting(x, y + 1, obj_invisible_wall)
 {
    vspeed += gravity_rate;
 }
@@ -90,6 +90,12 @@ if (place_meeting(x + jump_ledge_buffer, y + 1, obj_platform_small) && jump_buff
    vspeed = 1 * -jump_rate;
 }
 
+if (place_meeting(x + jump_ledge_buffer, y + 1, obj_invisible_wall) && jump_buffer_count < jump_buffer && !place_meeting(x + 1, y, obj_invisible_wall)) ||
+   (place_meeting(x - jump_ledge_buffer, y + 1, obj_invisible_wall) && jump_buffer_count < jump_buffer && !place_meeting(x - 1, y, obj_invisible_wall))
+{
+   vspeed = 1 * -jump_rate;
+}
+
 // Collisions and stuck/overlap prevention
 if (place_meeting(x + hspeed, y, obj_floor)) {
    while (!place_meeting(x + sign(hspeed), y, obj_floor)) {
@@ -97,8 +103,22 @@ if (place_meeting(x + hspeed, y, obj_floor)) {
    }
    hspeed = 0;
 }
+if (place_meeting(x + hspeed, y, obj_invisible_wall)) {
+   while (!place_meeting(x + sign(hspeed), y, obj_invisible_wall)) {
+       x += sign(hspeed);
+   }
+   hspeed = 0;
+}
 if (place_meeting(x, y + vspeed, obj_floor)) {
    while (!place_meeting(x, y + sign(vspeed), obj_floor)) {
+       y += sign(vspeed);
+   }
+   
+   vspeed = 0;
+}
+
+if (place_meeting(x, y + vspeed, obj_invisible_wall)) {
+   while (!place_meeting(x, y + sign(vspeed), obj_invisible_wall)) {
        y += sign(vspeed);
    }
    
@@ -124,7 +144,24 @@ if (place_meeting(x + hspeed, y + vspeed, obj_floor)) {
    vspeed = 0;
 }
 
-facing = sign(hspeed);
+if (place_meeting(x + hspeed, y + vspeed, obj_invisible_wall)) {
+   while (!place_meeting(x + sign(hspeed), y + sign(vspeed), obj_invisible_wall)) {
+       x += sign(hspeed);
+       y += sign(vspeed);
+   }
+   hspeed = 0;
+   vspeed = 0;
+}
+
+if (hspeed != 0)
+	facing = sign(hspeed);
+else
+{
+	if (move_input_total != 0)
+		facing = sign(move_input_total)
+	else
+		facing = 1;
+}
 
 
 gun_direction_actual = sign(mouse_x - x) * arccos((y - mouse_y)/sqrt((mouse_y - y)*(mouse_y - y) + (mouse_x - x)*(mouse_x - x)));
@@ -141,6 +178,11 @@ if (x > 1280)
 	}
 	gone_right();
 	clean_up_teleport();
+	if (global.current_zone == 0)
+	{
+		clear_stage();
+		construct_hub(1);
+	}
 	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
 	
 }

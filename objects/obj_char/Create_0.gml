@@ -36,9 +36,6 @@ control_left_alt = vk_left;
 control_right_alt = vk_right;
 control_jump_alt = vk_up;
 
-// Fixes
-hspeed = 0.000001;
-
 // Global
 global.px = x;
 global.py = y;
