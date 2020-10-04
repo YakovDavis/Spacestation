@@ -28,6 +28,7 @@
     {"id":{"name":"clean_up_teleport","path":"scripts/clean_up_teleport/clean_up_teleport.yy",},"order":0,},
     {"id":{"name":"spr_char_idle","path":"sprites/spr_char_idle/spr_char_idle.yy",},"order":2,},
     {"id":{"name":"obj_cursor_control","path":"objects/obj_cursor_control/obj_cursor_control.yy",},"order":13,},
+    {"id":{"name":"spr_robot","path":"sprites/spr_robot/spr_robot.yy",},"order":20,},
     {"id":{"name":"spr_finish","path":"sprites/spr_finish/spr_finish.yy",},"order":18,},
     {"id":{"name":"obj_gun_icon","path":"objects/obj_gun_icon/obj_gun_icon.yy",},"order":11,},
     {"id":{"name":"spr_zombie_1","path":"sprites/spr_zombie_1/spr_zombie_1.yy",},"order":9,},
