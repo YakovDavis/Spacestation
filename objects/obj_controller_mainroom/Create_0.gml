@@ -11,3 +11,4 @@ instance_create_depth(960, 128, -50, obj_char);
 display_set_gui_size(320, 180);
 
 clean_up_teleport();
+construct_stage(0);

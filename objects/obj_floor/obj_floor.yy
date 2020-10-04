@@ -25,7 +25,9 @@
     {"x":640.0,"y":20.0,},
     {"x":0.0,"y":20.0,},
   ],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"parent":{"name":"obj_floor","path":"objects/obj_floor/obj_floor.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
