@@ -9,7 +9,7 @@
     {"id":{"name":"spr_char_running","path":"sprites/spr_char_running/spr_char_running.yy",},"order":2,},
     {"id":{"name":"spr_wall_door","path":"sprites/spr_wall_door/spr_wall_door.yy",},"order":8,},
     {"id":{"name":"spr_space","path":"sprites/spr_space/spr_space.yy",},"order":6,},
-    {"id":{"name":"spr_AK","path":"sprites/spr_AK/spr_AK.yy",},"order":4,},
+    {"id":{"name":"spr_ak","path":"sprites/spr_ak/spr_ak.yy",},"order":4,},
     {"id":{"name":"spr_ps_st","path":"sprites/spr_ps_st/spr_ps_st.yy",},"order":5,},
     {"id":{"name":"obj_station","path":"objects/obj_station/obj_station.yy",},"order":3,},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":6,},
