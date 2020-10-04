@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"42238aa8-505e-46d1-bcb3-b896642f41a7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Room",
-    "path": "folders/Sprites/Room.yy",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_space",
