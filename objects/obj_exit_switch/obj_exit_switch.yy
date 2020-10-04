@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_lamp",
-    "path": "sprites/spr_lamp/spr_lamp.yy",
+    "name": "spr_finish",
+    "path": "sprites/spr_finish/spr_finish.yy",
   },
   "solid": false,
   "visible": true,
@@ -28,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_lamp",
+  "name": "obj_exit_switch",
   "tags": [],
   "resourceType": "GMObject",
 }

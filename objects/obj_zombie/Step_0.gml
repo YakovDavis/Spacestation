@@ -3,7 +3,7 @@ if ((x-global.px)*(x-global.px)+(y-global.py)*(x-global.py))
 
 move_input_total = 0;
 
-if (triggered)&&(abs(global.px - x) > 0.2)
+if (triggered)&&(abs(global.px - x) > 0.5)
 	move_input_total = sign(global.px - x);
 
 if (place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))

@@ -23,6 +23,8 @@ gun_direction_animated = 0;
 bullet_spawn_radius = 0.5;
 bullet_speed = 5;
 jumping = false;
+is_invincible = false;
+is_hit = false;
 
 // Controls
 control_left = ord("A");
