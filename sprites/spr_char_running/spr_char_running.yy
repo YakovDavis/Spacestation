@@ -65,7 +65,7 @@
     "spriteId": {"name":"spr_char_running","path":"sprites/spr_char_running/spr_char_running.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 16.0,
+    "playbackSpeed": 20.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
