@@ -101,8 +101,8 @@ if (x > 1280)
 		else
 			x -= 640;
 	}
-	clean_up_teleport();
 	gone_right();
+	clean_up_teleport();
 	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
 	
 }
@@ -116,8 +116,8 @@ if (x < 640)
 		else
 			x += 640;
 	}
-	clean_up_teleport();
 	gone_left();
+	clean_up_teleport();
 	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
 }
 
