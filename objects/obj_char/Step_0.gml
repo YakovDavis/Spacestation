@@ -1,5 +1,10 @@
 /// @description Control Player
 
+//show_debug_message(place_meeting(x, y + 1, obj_platform_small));
+
+global.px = x;
+global.py = y;
+
 // Get input
 move_input_total = 0;
 if keyboard_check(control_left) || keyboard_check(control_left_alt) { move_input_total -= 1; }
@@ -17,7 +22,7 @@ if jump_buffer_count < jump_buffer
 
 // No move input, brake
 // On ground
-if place_meeting(x, y + 1, obj_floor)
+if (place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))
 {
    if move_input_total == 0 || (hspeed * move_input_total < 0)
    {
@@ -25,7 +30,7 @@ if place_meeting(x, y + 1, obj_floor)
    }
 }
 // In air
-if !place_meeting(x, y + 1, obj_floor)
+if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))
 {
    if move_input_total == 0 || (hspeed * move_input_total < 0)
    {
@@ -40,8 +45,17 @@ if place_meeting(x, y + 1, obj_floor)
    hspeed += move_input_total * accel_rate_ground;
    jumping = false;
 }
+
+var pl = instance_place(x, y + 1, obj_platform_small);
+if (pl != noone) {
+   if (pl.y > y + 13) {
+	  hspeed += move_input_total * accel_rate_ground;
+	  jumping = false;
+   }
+}
+	   
 // In air
-if !place_meeting(x, y + 1, obj_floor)
+if !(place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_platform_small))
 {
    hspeed += move_input_total * accel_rate_air;
    jumping = true;
@@ -50,15 +64,28 @@ if !place_meeting(x, y + 1, obj_floor)
 hspeed = clamp(hspeed, -move_rate, move_rate);
 
 // Gravity
-if (vspeed < gravity_vspeed) || !place_meeting(x, y + 1, obj_floor)
+if (vspeed < gravity_vspeed) && !place_meeting(x, y + 1, obj_floor)
 {
    vspeed += gravity_rate;
 }
+
+var pl = instance_place(x, y + 1, obj_platform_small);
+if (vspeed < gravity_vspeed)&&(pl != noone)
+   if (pl.y > y + 13)
+	   if (vspeed < gravity_vspeed)
+			vspeed += gravity_rate;
+
 
 // Jump if on / close to ground
 // Account for ledge buffer but prevent wall jumping
 if (place_meeting(x + jump_ledge_buffer, y + 1, obj_floor) && jump_buffer_count < jump_buffer && !place_meeting(x + 1, y, obj_floor)) ||
    (place_meeting(x - jump_ledge_buffer, y + 1, obj_floor) && jump_buffer_count < jump_buffer && !place_meeting(x - 1, y, obj_floor))
+{
+   vspeed = 1 * -jump_rate;
+}
+
+if (place_meeting(x + jump_ledge_buffer, y + 1, obj_platform_small) && jump_buffer_count < jump_buffer && !place_meeting(x + 1, y, obj_platform_small)) ||
+   (place_meeting(x - jump_ledge_buffer, y + 1, obj_platform_small) && jump_buffer_count < jump_buffer && !place_meeting(x - 1, y, obj_platform_small))
 {
    vspeed = 1 * -jump_rate;
 }
@@ -74,7 +101,18 @@ if (place_meeting(x, y + vspeed, obj_floor)) {
    while (!place_meeting(x, y + sign(vspeed), obj_floor)) {
        y += sign(vspeed);
    }
+   
    vspeed = 0;
+}
+
+var pl = instance_place(x, y + vspeed, obj_platform_small);
+if (pl != noone) {
+   if (pl.y > y + 13) {
+	   while (!place_meeting(x, y + sign(vspeed), obj_platform_small)) {
+           y += sign(vspeed);
+	   }
+   vspeed = 0;
+   }
 }
 // Diagonal
 if (place_meeting(x + hspeed, y + vspeed, obj_floor)) {

@@ -36,3 +36,7 @@ control_jump_alt = vk_up;
 
 // Fixes
 hspeed = 0.000001;
+
+// Global
+global.px = x;
+global.py = y;
