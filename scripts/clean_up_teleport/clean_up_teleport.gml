@@ -21,9 +21,9 @@ function clean_up_teleport()
 			station.sprite_index = spr_station;
 		}
 	}
-	for (var i = 0; i < 3; i++)
+	for (var i = 0; i < 15; i++)
 	{
 		flooring = instance_find(obj_floor, i);
-		flooring.x = i * 640;
+		flooring.x = i * 640 - 6 * 640;
 	}
 }

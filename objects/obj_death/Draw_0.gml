@@ -1,0 +1,1 @@
+draw_sprite(spr_death, -1, x, y);
