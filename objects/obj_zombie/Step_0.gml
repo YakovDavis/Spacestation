@@ -1,4 +1,4 @@
-if ((x-global.px)*(x-global.px)+(y-global.py)*(x-global.py))
+if ((x-global.px)*(x-global.px)+(y-global.py)*(y-global.py) < 20000)
 	triggered = true;
 
 move_input_total = 0;

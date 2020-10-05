@@ -31,7 +31,7 @@ function construct_stage(wave)
 	
 	if (wave > 0)
 	{
-			var f = file_text_open_read("wave" + string(wave) +".json");
+		var f = file_text_open_read("wave" + string(wave) +".json");
 		var s = "";
 		while (!file_text_eof(f))
 		{
@@ -49,7 +49,11 @@ function construct_stage(wave)
 					var obj_type = obj_zombie;
 					if (ds_map_find_value(entity_map, "type") == "slime")
 						var obj_type = obj_slime;
-					var pl = instance_create_depth(ds_map_find_value(entity_map, "x") + (i + 1) * 640, ds_map_find_value(entity_map, "y"), -10, obj_type);
+					if (ds_map_find_value(entity_map, "type") == "health")
+						var obj_type = obj_health_pickup;
+					if (ds_map_find_value(entity_map, "type") == "bullet")
+						var obj_type = obj_ammo_pickup;
+					var pl = instance_create_depth(ds_map_find_value(entity_map, "x") + (i + 1) * 640, ds_map_find_value(entity_map, "y"), -20, obj_type);
 			}
 		}
 	}

@@ -71,7 +71,7 @@ if (vspeed < gravity_vspeed) && !place_meeting(x, y + 1, obj_floor) && !place_me
 
 var pl = instance_place(x, y + 1, obj_platform_small);
 if (vspeed < gravity_vspeed)&&(pl != noone)
-   if (pl.y > y + 13)
+   if (pl.y > y + 12)
 	   if (vspeed < gravity_vspeed)
 			vspeed += gravity_rate;
 
@@ -180,7 +180,7 @@ if (x > 1280)
 	clean_up_teleport();
 	if (global.current_zone == 0)
 	{
-		clear_stage();
+		clear_hub();
 		construct_hub(1);
 	}
 	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
@@ -198,6 +198,11 @@ if (x < 640)
 	}
 	gone_left();
 	clean_up_teleport();
+	if (global.current_zone == 0)
+	{
+		clear_hub();
+		construct_hub(1);
+	}
 	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
 }
 

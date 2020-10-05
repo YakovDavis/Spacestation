@@ -9,7 +9,7 @@ frame = 0.0;
 facing = 1;
 animation_speed = 0.1;
 triggered = true;
-hp = 3;
+hp = 5;
 is_hit = false;
 
 // Fixes
