@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"fcb30a33-019c-4323-b7be-44f39de9fe36","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "monster",
-    "path": "folders/Sprites/monster.yy",
+    "name": "enemies",
+    "path": "folders/Sprites/enemies.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_slime_go",

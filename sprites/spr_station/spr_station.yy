@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"bf09c52b-b875-4a38-a035-2e89cc7bea78","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "environment",
+    "path": "folders/Sprites/environment.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_station",

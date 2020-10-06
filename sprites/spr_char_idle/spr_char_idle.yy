@@ -72,8 +72,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8be8eb88-35a1-4ce1-8be5-1a846209176d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "character",
+    "path": "folders/Sprites/character.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_char_idle",

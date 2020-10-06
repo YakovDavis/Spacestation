@@ -1,0 +1,10 @@
+player_in_range = false;
+idle_frame = 0.0;
+idle_rate = 0.05;
+fire_frame = 0.0;
+fire_rate = 0.02;
+facing = 1;
+hp = 5;
+is_hit = false;
+bullet_speed = 2;
+shooting = false;

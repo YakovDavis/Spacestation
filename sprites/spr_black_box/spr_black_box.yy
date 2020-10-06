@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9a379b2c-9e8b-49cc-aef8-1ed53218ccec","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "interface",
+    "path": "folders/Sprites/interface.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_black_box",

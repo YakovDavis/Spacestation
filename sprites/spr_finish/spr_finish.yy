@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0ba1d92a-5c15-4d5e-8b1a-10a36ad81efd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "environment",
+    "path": "folders/Sprites/environment.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_finish",

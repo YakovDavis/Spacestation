@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"b72a0e03-5fee-44dc-a9e8-6efdbca16853","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "powerups",
+    "path": "folders/Sprites/powerups.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ammo",

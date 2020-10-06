@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"df06d5a5-c8f6-416f-83c6-dd3aecd95e07","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "powerups",
+    "path": "folders/Sprites/powerups.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_health",

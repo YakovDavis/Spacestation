@@ -84,8 +84,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"f37b3b1d-0c14-413a-ad3d-a67085865f2c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "weapons",
+    "path": "folders/Sprites/weapons.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_pistol",
