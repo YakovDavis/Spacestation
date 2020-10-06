@@ -4,4 +4,5 @@ if (global.ammo > 0)
 	b.vel_x = bullet_speed * sin(gun_direction_actual) + hspeed;
 	b.vel_y = -bullet_speed * cos(gun_direction_actual) - vspeed;
 	global.ammo--;
+	audio_play_sound(snd_gunshot, 0, false);
 }

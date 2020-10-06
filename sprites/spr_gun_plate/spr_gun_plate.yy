@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":75.0,"displayName":"default","resourceVersion":"1.0","name":"855c07d8-e788-43c4-ac97-ebed43841ed3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "interface",
+    "path": "folders/Sprites/interface.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_gun_plate",

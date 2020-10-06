@@ -1,3 +1,5 @@
+can_be_pressed = (instance_find(obj_zombie, 0) == noone) && (instance_find(obj_slime, 0) == noone) && (instance_find(obj_sentry, 0) == noone);
+
 if (can_be_pressed)
 {
 	if ((global.px-x)*(global.px-x) + (global.py-y)*(global.py-y) < 500)

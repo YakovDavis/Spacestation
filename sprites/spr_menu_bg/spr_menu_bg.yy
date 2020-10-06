@@ -88,8 +88,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c20944db-d333-4321-b4a2-724c40a1c97b","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "interface",
+    "path": "folders/Sprites/interface.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_menu_bg",

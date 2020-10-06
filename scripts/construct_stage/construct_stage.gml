@@ -46,14 +46,23 @@ function construct_stage(wave)
 			for (var j = 0; j < real(ds_map_find_value(zone_map, "count")); j++)
 			{
 					var entity_map = ds_map_find_value(zone_map, string(j));
-					var obj_type = obj_zombie;
+					var ent_type = obj_zombie;
+					var ent_depth = -20
 					if (ds_map_find_value(entity_map, "type") == "slime")
-						var obj_type = obj_slime;
+						var ent_type = obj_slime;
+					if (ds_map_find_value(entity_map, "type") == "sentry")
+						var ent_type = obj_sentry;
 					if (ds_map_find_value(entity_map, "type") == "health")
-						var obj_type = obj_health_pickup;
+					{
+						var ent_type = obj_health_pickup;
+						ent_depth = -15
+					}
 					if (ds_map_find_value(entity_map, "type") == "bullet")
-						var obj_type = obj_ammo_pickup;
-					var pl = instance_create_depth(ds_map_find_value(entity_map, "x") + (i + 1) * 640, ds_map_find_value(entity_map, "y"), -20, obj_type);
+					{
+						var ent_type = obj_ammo_pickup;
+						ent_depth = -15
+					}
+					var pl = instance_create_depth(ds_map_find_value(entity_map, "x") + (i + 1) * 640, ds_map_find_value(entity_map, "y"), ent_depth, ent_type);
 			}
 		}
 	}

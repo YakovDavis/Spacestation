@@ -4,6 +4,8 @@ global.right_zone = 1;
 global.wave = 0;
 global.healthbar = 3;
 global.ammo = 100;
+global.weapon = "pistol";
+randomize();
 
 instance_create_depth(0, 0, -100, obj_cursor_control);
 instance_create_depth(960, 128, -50, obj_char);

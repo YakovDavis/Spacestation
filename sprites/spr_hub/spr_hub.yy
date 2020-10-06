@@ -73,8 +73,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"933239a6-e5d7-444d-ab40-73f53afc4303","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "room",
-    "path": "folders/Sprites/room.yy",
+    "name": "environment",
+    "path": "folders/Sprites/environment.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_hub",

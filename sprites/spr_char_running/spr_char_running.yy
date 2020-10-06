@@ -112,8 +112,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ee2e0dd4-4f71-4984-82ba-c9b116c4b2ea","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "character",
+    "path": "folders/Sprites/character.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_char_running",

@@ -48,7 +48,7 @@ if place_meeting(x, y + 1, obj_floor)||place_meeting(x, y + 1, obj_invisible_wal
 
 var pl = instance_place(x, y + 1, obj_platform_small);
 if (pl != noone) {
-   if (pl.y > y + 13) {
+   if (pl.y > y + 12) {
 	  hspeed += move_input_total * accel_rate_ground;
 	  jumping = false;
    }
@@ -81,18 +81,24 @@ if (vspeed < gravity_vspeed)&&(pl != noone)
 if (place_meeting(x + jump_ledge_buffer, y + 1, obj_floor) && jump_buffer_count < jump_buffer && !place_meeting(x + 1, y, obj_floor)) ||
    (place_meeting(x - jump_ledge_buffer, y + 1, obj_floor) && jump_buffer_count < jump_buffer && !place_meeting(x - 1, y, obj_floor))
 {
+   if (!audio_is_playing(snd_jump))
+	audio_play_sound(snd_jump, 0, false);
    vspeed = 1 * -jump_rate;
 }
 
-if (place_meeting(x + jump_ledge_buffer, y + 1, obj_platform_small) && jump_buffer_count < jump_buffer && !place_meeting(x + 1, y, obj_platform_small)) ||
-   (place_meeting(x - jump_ledge_buffer, y + 1, obj_platform_small) && jump_buffer_count < jump_buffer && !place_meeting(x - 1, y, obj_platform_small))
+if (place_meeting(x + jump_ledge_buffer, y + 1, obj_platform_small) && jump_buffer_count < jump_buffer) ||
+   (place_meeting(x - jump_ledge_buffer, y + 1, obj_platform_small) && jump_buffer_count < jump_buffer)
 {
+   if (!audio_is_playing(snd_jump))
+	audio_play_sound(snd_jump, 0, false);
    vspeed = 1 * -jump_rate;
 }
 
 if (place_meeting(x + jump_ledge_buffer, y + 1, obj_invisible_wall) && jump_buffer_count < jump_buffer && !place_meeting(x + 1, y, obj_invisible_wall)) ||
    (place_meeting(x - jump_ledge_buffer, y + 1, obj_invisible_wall) && jump_buffer_count < jump_buffer && !place_meeting(x - 1, y, obj_invisible_wall))
 {
+   if (!audio_is_playing(snd_jump))
+	audio_play_sound(snd_jump, 0, false);
    vspeed = 1 * -jump_rate;
 }
 
@@ -127,7 +133,7 @@ if (place_meeting(x, y + vspeed, obj_invisible_wall)) {
 
 var pl = instance_place(x, y + vspeed, obj_platform_small);
 if (pl != noone) {
-   if (pl.y > y + 13) {
+   if (pl.y > y + 12) {
 	   while (!place_meeting(x, y + sign(vspeed), obj_platform_small)) {
            y += sign(vspeed);
 	   }
@@ -171,7 +177,7 @@ if (x > 1280)
 {
 	with(all)
 	{
-		if (object_get_name(object_index) == "obj_bullet")
+		if ((object_get_name(object_index) == "obj_bullet") || (object_get_name(object_index) == "obj_robot_bullet"))
 			real_x -= 640;
 		else
 			x -= 640;
@@ -191,7 +197,7 @@ if (x < 640)
 {
 	with(all)
 	{
-		if (object_get_name(object_index) == "obj_bullet")
+		if ((object_get_name(object_index) == "obj_bullet") || (object_get_name(object_index) == "obj_robot_bullet"))
 			real_x += 640;
 		else
 			x += 640;
@@ -204,6 +210,15 @@ if (x < 640)
 		construct_hub(1);
 	}
 	//show_debug_message(string(global.left_zone) + string(global.current_zone) + string(global.right_zone));
+}
+
+if ((abs(hspeed) > idle_animation_margin)&&(!audio_is_playing(snd_steps)))
+{
+	audio_play_sound(snd_steps, 0, true);
+}
+if (abs(hspeed) <= idle_animation_margin)
+{
+	audio_stop_sound(snd_steps);
 }
 
 // Speed debug

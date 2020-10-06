@@ -12,6 +12,11 @@ triggered = true;
 hp = 3;
 is_hit = false;
 triggered = false;
+zombie_sprite = spr_zombie_1;
+if (irandom(1) == 1)
+	zombie_sprite = spr_zombie_2;
 
 // Fixes
 hspeed = 0.000001;
+
+alarm[1] = 200 + 100 * random(5);

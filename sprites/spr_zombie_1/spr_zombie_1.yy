@@ -76,8 +76,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"66dc0af5-3272-4c1e-a58f-34f003b8b395","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "monster",
-    "path": "folders/Sprites/monster.yy",
+    "name": "enemies",
+    "path": "folders/Sprites/enemies.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_zombie_1",
